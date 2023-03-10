@@ -27,6 +27,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivProfileView"
+            android:layout_marginTop="@dimen/sb_size_12"
             android:layout_width="@dimen/sb_size_28"
             android:layout_height="@dimen/sb_size_28"
             android:scaleType="centerCrop"
@@ -54,6 +55,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSentAt"
+            android:layout_marginLeft="@dimen/sb_size_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -64,6 +66,10 @@
 
         <com.sendbird.uikit.internal.ui.widgets.AutoLinkTextView
             android:id="@+id/tvMessage"
+            android:paddingTop="@dimen/sb_size_5"
+            android:paddingBottom="@dimen/sb_size_5"
+            android:paddingLeft="@dimen/sb_size_12"
+            android:paddingRight="@dimen/sb_size_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/sb_size_12"

@@ -48,17 +48,16 @@ internal class AdminMessageView @JvmOverloads internal constructor(
                 R.styleable.MessageView_sb_message_sender_name_text_appearance,
                 R.style.SendbirdCaption1OnLight02
             )
-
+            val sentAtAppearance = a.getResourceId(
+                R.styleable.ParentMessageInfoView_sb_parent_message_info_sent_at_appearance,
+                R.style.SendbirdCaption2OnLight03
+            )
             binding.tvMessage.background =
                 DrawableUtils.setTintList(context, messageBackground, messageBackgroundTint)
 
             binding.tvMessage.setAppearance(context, textAppearance)
-            //binding.tvMessage.setBackgroundResource(backgroundResourceId)
             binding.tvNickname.setAppearance(context, nicknameAppearance)
-            //binding.tvNickname.setBackgroundResource(backgroundResourceId)
-            binding.tvSentAt.setAppearance(context, nicknameAppearance)
-            //binding.tvSentAt.setBackgroundResource(backgroundResourceId)
-
+            binding.tvSentAt.setAppearance(context, sentAtAppearance)
 
         } finally {
             a.recycle()
@@ -67,8 +66,12 @@ internal class AdminMessageView @JvmOverloads internal constructor(
 
     fun drawMessage(message: BaseMessage) {
         binding.tvMessage.text = message.message
-        binding.tvSentAt.text = DateUtils.formatTimelineMessage(message.createdAt)
+        binding.tvSentAt.text = DateUtils.formatDateTime(context, message.createdAt)
         binding.tvNickname.text = "Admin User"
-        ViewUtils.drawProfile(binding.ivProfileView, message)
+        ViewUtils.drawProfile(
+            binding.ivProfileView,
+            "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png",
+                    "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+        )
     }
 }
