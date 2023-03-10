@@ -30,7 +30,10 @@ internal class AdminMessageView @JvmOverloads internal constructor(
                 this,
                 true
             )
-            val textAppearance = R.color.background_50
+            val textAppearance = a.getResourceId(
+                R.styleable.MessageView_User_sb_message_me_text_appearance,
+                R.style.SendbirdBody3OnDark01
+            )
             val messageBackground = a.getResourceId(
                 R.styleable.MessageView_User_sb_message_me_background,
                 R.drawable.sb_shape_chat_bubble
