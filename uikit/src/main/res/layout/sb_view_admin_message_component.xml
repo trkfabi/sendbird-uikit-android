@@ -53,7 +53,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSentAt"
-            android:layout_marginStart="@dimen/sb_size_12"
+            android:layout_marginStart="@dimen/sb_size_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
