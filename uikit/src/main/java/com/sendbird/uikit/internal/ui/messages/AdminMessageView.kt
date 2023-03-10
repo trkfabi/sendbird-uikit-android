@@ -8,6 +8,7 @@ import com.sendbird.android.message.BaseMessage
 import com.sendbird.uikit.R
 import com.sendbird.uikit.databinding.SbViewAdminMessageComponentBinding
 import com.sendbird.uikit.internal.extensions.setAppearance
+import com.sendbird.uikit.utils.DateUtils
 import com.sendbird.uikit.utils.DrawableUtils
 import com.sendbird.uikit.utils.ViewUtils
 
@@ -31,7 +32,7 @@ internal class AdminMessageView @JvmOverloads internal constructor(
             )
             val textAppearance = a.getResourceId(
                 R.styleable.MessageView_User_sb_message_me_text_appearance,
-                R.style.SendbirdCaption2OnLight02
+                android.R.color.white
             )
             val backgroundResourceId = a.getResourceId(
                 R.styleable.MessageView_User_sb_message_me_background,
@@ -43,15 +44,20 @@ internal class AdminMessageView @JvmOverloads internal constructor(
             )
             val messageBackgroundTint = android.R.color.holo_blue_light
 
-            binding.contentPanel.background =
+            val nicknameAppearance = a.getResourceId(
+                R.styleable.MessageView_sb_message_sender_name_text_appearance,
+                R.style.SendbirdCaption1OnLight02
+            )
+
+            binding.tvMessage.background =
                 DrawableUtils.setTintList(context, messageBackground, messageBackgroundTint)
 
             binding.tvMessage.setAppearance(context, textAppearance)
-            binding.tvMessage.setBackgroundResource(backgroundResourceId)
-            binding.tvNickname.setAppearance(context, textAppearance)
-            binding.tvNickname.setBackgroundResource(backgroundResourceId)
-            binding.tvSentAt.setAppearance(context, textAppearance)
-            binding.tvSentAt.setBackgroundResource(backgroundResourceId)
+            //binding.tvMessage.setBackgroundResource(backgroundResourceId)
+            binding.tvNickname.setAppearance(context, nicknameAppearance)
+            //binding.tvNickname.setBackgroundResource(backgroundResourceId)
+            binding.tvSentAt.setAppearance(context, nicknameAppearance)
+            //binding.tvSentAt.setBackgroundResource(backgroundResourceId)
 
 
         } finally {
@@ -60,8 +66,9 @@ internal class AdminMessageView @JvmOverloads internal constructor(
     }
 
     fun drawMessage(message: BaseMessage) {
-        binding.tvMessage.text = message.message + " TEST"
-        binding.tvSentAt.text = message.createdAt.toString()
-        binding.tvNickname.text = message.sender?.nickname
+        binding.tvMessage.text = message.message
+        binding.tvSentAt.text = DateUtils.formatTimelineMessage(message.createdAt)
+        binding.tvNickname.text = "Admin User"
+        ViewUtils.drawProfile(binding.ivProfileView, message)
     }
 }
