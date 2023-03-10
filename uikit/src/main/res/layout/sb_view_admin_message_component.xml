@@ -27,7 +27,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivProfileView"
-            android:layout_marginTop="@dimen/sb_size_12"
+            android:layout_marginTop="@dimen/sb_size_20"
             android:layout_width="@dimen/sb_size_28"
             android:layout_height="@dimen/sb_size_28"
             android:scaleType="centerCrop"
@@ -41,8 +41,8 @@
             android:singleLine="true"
             android:ellipsize="end"
             android:gravity="center_vertical"
-            android:layout_marginLeft="@dimen/sb_size_12"
-            android:layout_marginStart="@dimen/sb_size_12"
+            android:layout_marginLeft="@dimen/sb_size_20"
+            android:layout_marginStart="@dimen/sb_size_20"
             android:layout_marginRight="@dimen/sb_size_4"
             android:layout_marginEnd="@dimen/sb_size_4"
             android:paddingBottom="@dimen/sb_size_2"
@@ -70,6 +70,8 @@
             android:paddingBottom="@dimen/sb_size_5"
             android:paddingLeft="@dimen/sb_size_12"
             android:paddingRight="@dimen/sb_size_12"
+            android:layout_marginRight="@dimen/sb_size_40"
+            android:layout_marginEnd="@dimen/sb_size_40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/sb_size_12"

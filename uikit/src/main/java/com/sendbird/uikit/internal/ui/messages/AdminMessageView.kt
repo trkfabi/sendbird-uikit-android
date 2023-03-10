@@ -30,14 +30,7 @@ internal class AdminMessageView @JvmOverloads internal constructor(
                 this,
                 true
             )
-            val textAppearance = a.getResourceId(
-                R.styleable.MessageView_User_sb_message_me_text_appearance,
-                android.R.color.white
-            )
-            val backgroundResourceId = a.getResourceId(
-                R.styleable.MessageView_User_sb_message_me_background,
-                android.R.color.holo_blue_light
-            )
+            val textAppearance = R.color.background_50
             val messageBackground = a.getResourceId(
                 R.styleable.MessageView_User_sb_message_me_background,
                 R.drawable.sb_shape_chat_bubble
@@ -66,7 +59,7 @@ internal class AdminMessageView @JvmOverloads internal constructor(
 
     fun drawMessage(message: BaseMessage) {
         binding.tvMessage.text = message.message
-        binding.tvSentAt.text = DateUtils.formatDateTime(context, message.createdAt)
+        binding.tvSentAt.text = DateUtils.formatTime(context, message.createdAt)
         binding.tvNickname.text = "Admin User"
         ViewUtils.drawProfile(
             binding.ivProfileView,
