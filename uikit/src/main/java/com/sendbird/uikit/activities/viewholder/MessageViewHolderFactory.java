@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
-import java.util.logging.Logger;
+import android.util.Log;
 import com.sendbird.android.message.AdminMessage;
 import com.sendbird.android.message.BaseMessage;
 import com.sendbird.android.message.FileMessage;
