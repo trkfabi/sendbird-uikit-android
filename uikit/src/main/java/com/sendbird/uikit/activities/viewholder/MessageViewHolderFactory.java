@@ -112,7 +112,7 @@ public class MessageViewHolderFactory {
                 holder = new TimelineViewHolder(SbViewTimeLineMessageBinding.inflate(inflater, parent, false), messageListUIParams);
                 break;
             case VIEW_TYPE_ADMIN_MESSAGE:
-                Log.w("MessageViewHolderFactory", "createOpenChannelViewHolder: admin");
+                Log.w("MessageViewHolderFact", "createOpenChannelViewHolder: admin");
                 holder = new OpenChannelAdminMessageViewHolder(SbViewOpenChannelAdminMessageBinding.inflate(inflater, parent, false), messageListUIParams);
                 break;
             case VIEW_TYPE_USER_MESSAGE_ME:
@@ -193,7 +193,7 @@ public class MessageViewHolderFactory {
                 holder = new TimelineViewHolder(SbViewTimeLineMessageBinding.inflate(inflater, parent, false), messageListUIParams);
                 break;
             case VIEW_TYPE_ADMIN_MESSAGE:
-            Log.w("MessageViewHolderFactory", "createOpenChannelViewHolder: admin");
+            Log.w("MessageViewHolderFact", "deprecated createOpenChannelViewHolder: admin");
                 holder = new AdminMessageViewHolder(SbViewAdminMessageBinding.inflate(inflater, parent, false), new MessageListUIParams.Builder().setUseMessageGroupUI(false).build());
                 break;
             case VIEW_TYPE_PARENT_MESSAGE_INFO:
@@ -282,7 +282,7 @@ public class MessageViewHolderFactory {
         } else if (message instanceof TimelineMessage) {
             type = MessageType.VIEW_TYPE_TIME_LINE;
         } else if (message instanceof AdminMessage) {
-            Log.w("MessageViewHolderFactory", "getmessagetype: admin");
+            Log.w("MessageViewHolderFact", "getmessagetype: admin");
             type = MessageType.VIEW_TYPE_ADMIN_MESSAGE;
         } else {
             if (MessageUtils.isMine(message)) {
